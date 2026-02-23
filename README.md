@@ -1,40 +1,37 @@
-# 🚀 LeadFlow AI
+# LeadFlow AI - Automated Lead Generation
 
-**AI-Powered Lead Generation for Web Agencies & Freelancers**
+## What It Does
 
-Stop wasting 15+ hours per week hunting for clients. LeadFlow AI monitors Reddit, LinkedIn, and other platforms 24/7, detects buying intent, scores leads (A/B/C), and sends you ready-to-respond opportunities.
+Monitors Reddit 24/7, finds clients who need web design/SEO, sends them DMs automatically.
 
-## 🎯 The Problem
+**Zero manual work.**
 
-- Agencies waste 10-20 hours/week manually prospecting
-- Miss high-intent leads while working on current projects
-- Generic cold outreach gets ignored
-- No system for consistent pipeline
+## Setup
 
-## ✅ The Solution
+1. Run monitor once to test:
+```bash
+python reddit_monitor.py
+```
 
-- **24/7 AI Monitoring** - Never miss a hot lead
-- **Intent Detection** - Budget, urgency, authority, pain points
-- **Smart Scoring** - A/B/C grades (0-100 scale)
-- **Response Templates** - Reply in 60 seconds
-- **Multi-Platform** - Reddit, LinkedIn, Twitter, Discord, and more
+2. Check results:
+```bash
+type leads.json
+```
 
-## 📊 Validation
+3. Automated daily scan already set up (9 AM via Task Scheduler)
 
-UpGo Web AI Agency found a **$5,000 project in 48 hours** using this exact method. Now we're building the tool that does it for everyone.
+## Files
 
-## 💰 Pricing (Beta Launch - 50% Off)
+- `reddit_monitor.py` - Scans Reddit for client leads
+- `auto_respond.py` - Sends automated DMs (requires Reddit API)
+- `leads.json` - All leads found
+- `contacted.json` - Tracking sent messages
 
-- **Starter**: $149/mo - 20 leads/week, Reddit + 1 platform
-- **Growth**: $299/mo - 50 leads/week, multi-platform, Slack alerts
-- **Agency**: $499/mo - 100 leads/week, white-label, API access
+## Status
 
-## 🚀 Launch Status
-
-**Beta Week 1** - First 50 customers get lifetime 50% discount
+✅ Reddit monitoring: Working  
+⏳ Auto-DM: Needs Reddit API credentials  
 
 ---
 
-**Built by [UpGo Web AI Agency](https://upgo.ai)**  
-**Questions?** Email: mybangbot@gmail.com  
-**Twitter:** [@leadsflowbot](https://twitter.com/leadsflowbot)
+**This is your SaaS product. The code customers pay for.**
