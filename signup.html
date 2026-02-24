@@ -144,6 +144,7 @@
         <p class="subtitle">Get 20-100 qualified leads per week. Forever 50% off.</p>
         
         <form action="https://formspree.io/f/xojnyjry" method="POST">
+            <input type="hidden" name="_next" value="https://leadsflowbot.com/thank-you.html?plan=">
             <div>
                 <label for="name">Full Name *</label>
                 <input type="text" id="name" name="name" required placeholder="Steve Martin">
@@ -219,5 +220,14 @@
             </ul>
         </div>
     </div>
+    
+    <script>
+        // Update hidden redirect field based on selected plan
+        document.querySelector('form').addEventListener('submit', function() {
+            const selectedPlan = document.querySelector('input[name="plan"]:checked').value;
+            const redirectInput = document.querySelector('input[name="_next"]');
+            redirectInput.value = `https://leadsflowbot.com/thank-you.html?plan=${selectedPlan}`;
+        });
+    </script>
 </body>
 </html>

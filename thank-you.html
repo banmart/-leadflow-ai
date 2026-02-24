@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - LeadFlow AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        .checkmark {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #10b981;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            color: #6b7280;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .plan-info {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .plan-name {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #065f46;
+            margin-bottom: 10px;
+        }
+        .plan-price {
+            font-size: 2em;
+            color: #10b981;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .plan-original {
+            text-decoration: line-through;
+            color: #9ca3af;
+            font-size: 1.2em;
+        }
+        .payment-button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        .payment-button:hover {
+            background: #059669;
+        }
+        .benefits {
+            text-align: left;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        .benefits h3 {
+            color: #111827;
+            margin-bottom: 15px;
+        }
+        .benefits ul {
+            list-style: none;
+            color: #374151;
+        }
+        .benefits li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .note {
+            color: #6b7280;
+            font-size: 0.95em;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark">🎉</div>
+        <h1>You're Almost In!</h1>
+        <p class="subtitle">One more step to unlock automated lead generation</p>
+        
+        <div id="plan-details" class="plan-info">
+            <!-- Plan details will be inserted by JavaScript -->
+        </div>
+        
+        <a href="#" id="payment-link" class="payment-button">Complete Payment →</a>
+        
+        <div class="benefits">
+            <h3>What Happens Next:</h3>
+            <ul>
+                <li>Click the payment button above</li>
+                <li>Complete your Stripe checkout (secure & encrypted)</li>
+                <li>You'll receive your first lead digest tomorrow at 8 AM</li>
+                <li>We'll send you dashboard access + onboarding guide</li>
+            </ul>
+        </div>
+        
+        <div class="note">
+            <strong>🔒 Secure Payment:</strong> All payments processed by Stripe. Your card details are never stored on our servers. 30-day money-back guarantee.
+        </div>
+        
+        <p style="margin-top: 30px; color: #6b7280;">
+            Questions? Email <a href="mailto:banmart@gmail.com" style="color: #10b981;">banmart@gmail.com</a>
+        </p>
+    </div>
+    
+    <script>
+        // Payment links for each plan
+        const PAYMENT_LINKS = {
+            'starter': 'https://buy.stripe.com/test_bJe28s6tP0cQaSigORgQE02',
+            'growth': 'https://buy.stripe.com/test_4gMaEY3hD4t66C2cyBgQE01',
+            'agency': 'https://buy.stripe.com/test_7sY00kdWh6Be7G6cyBgQE00'
+        };
+        
+        const PLAN_INFO = {
+            'starter': {
+                name: 'Starter Plan',
+                price: '$149/mo',
+                original: '$297/mo',
+                features: '20 qualified leads per week'
+            },
+            'growth': {
+                name: 'Growth Plan',
+                price: '$299/mo',
+                original: '$597/mo',
+                features: '50 qualified leads per week + Real-time alerts'
+            },
+            'agency': {
+                name: 'Agency Plan',
+                price: '$499/mo',
+                original: '$997/mo',
+                features: '100 qualified leads per week + API access + White-label'
+            }
+        };
+        
+        // Get plan from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan') || 'growth'; // default to growth
+        
+        // Update page with plan details
+        const planInfo = PLAN_INFO[plan];
+        const paymentLink = PAYMENT_LINKS[plan];
+        
+        document.getElementById('plan-details').innerHTML = `
+            <div class="plan-name">${planInfo.name}</div>
+            <div class="plan-price">${planInfo.price} <span class="plan-original">${planInfo.original}</span></div>
+            <div style="color: #065f46; margin-top: 10px;">${planInfo.features}</div>
+            <div style="color: #10b981; font-weight: 600; margin-top: 10px;">🔥 50% OFF LOCKED IN FOREVER</div>
+        `;
+        
+        document.getElementById('payment-link').href = paymentLink;
+    </script>
+</body>
+</html>
