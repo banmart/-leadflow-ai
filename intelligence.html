@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Intelligence Reports - Deep Competitive Analysis | LeadFlow AI</title>
+    <meta name="description" content="Full-spectrum Reddit intelligence: brand health, SERP vulnerabilities, competitor positioning, content gaps, and ad copy extraction. $997/report or $297/mo.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #0a0c0f;
+        }
+        
+        /* HEADER */
+        .top-bar {
+            background: rgba(255,69,0,0.1);
+            border-bottom: 1px solid rgba(255,69,0,0.3);
+            padding: 12px 0;
+            text-align: center;
+            color: #ff4500;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        nav {
+            background: rgba(17,19,24,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1f2530;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #e8eaf0;
+        }
+        
+        .logo span {
+            color: #ff4500;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #6b7585;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: #e8eaf0;
+        }
+        
+        .nav-cta {
+            background: #ff4500;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .nav-cta:hover {
+            opacity: 0.9;
+            color: white;
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0a0c0f 0%, #111318 100%);
+            padding: 80px 32px 100px;
+            text-align: center;
+            border-bottom: 1px solid #1f2530;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,69,0,0.02) 2px, rgba(255,69,0,0.02) 4px);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,69,0,0.1);
+            border: 1px solid rgba(255,69,0,0.3);
+            color: #ff4500;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            color: #e8eaf0;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        
+        .hero h1 span {
+            color: #ff4500;
+        }
+        
+        .hero-sub {
+            font-size: 20px;
+            color: #6b7585;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: #ff4500;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #e8eaf0;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid #2a3140;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #ff4500;
+            color: #ff4500;
+        }
+        
+        .trust-bar {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #1f2530;
+        }
+        
+        .trust-stat {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ff4500;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6b7585;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 100px 32px;
+            background: #0a0c0f;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: rgba(255,69,0,0.1);
+            border: 1px solid rgba(255,69,0,0.3);
+            color: #ff4500;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #e8eaf0;
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #6b7585;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature-card {
+            background: #111318;
+            border: 1px solid #1f2530;
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: #ff4500;
+            transform: translateY(-4px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e8eaf0;
+            margin-bottom: 12px;
+        }
+        
+        .feature-desc {
+            color: #6b7585;
+            line-height: 1.7;
+        }
+        
+        /* SAMPLE REPORT */
+        .sample-preview {
+            background: #111318;
+            border: 1px solid #ff4500;
+            border-radius: 12px;
+            padding: 48px;
+            margin-top: 48px;
+        }
+        
+        .sample-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #1f2530;
+        }
+        
+        .sample-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e8eaf0;
+        }
+        
+        .sample-badge {
+            background: rgba(255,69,0,0.1);
+            border: 1px solid rgba(255,69,0,0.3);
+            color: #ff4500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .sample-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .sample-section {
+            padding: 20px;
+            background: #181c22;
+            border: 1px solid #2a3140;
+            border-radius: 8px;
+        }
+        
+        .section-num {
+            font-size: 12px;
+            color: #ff4500;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .section-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e8eaf0;
+            margin-bottom: 8px;
+        }
+        
+        .section-detail {
+            font-size: 13px;
+            color: #6b7585;
+            line-height: 1.5;
+        }
+        
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .price-card {
+            background: #111318;
+            border: 2px solid #1f2530;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .price-card:hover {
+            border-color: #2a3140;
+            transform: translateY(-4px);
+        }
+        
+        .price-card.featured {
+            border-color: #ff4500;
+            background: rgba(255,69,0,0.03);
+        }
+        
+        .price-badge {
+            display: inline-block;
+            background: #ff4500;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .price-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: #e8eaf0;
+            margin-bottom: 16px;
+        }
+        
+        .price-amount {
+            font-size: 56px;
+            font-weight: 800;
+            color: #ff4500;
+            margin-bottom: 8px;
+        }
+        
+        .price-period {
+            font-size: 16px;
+            color: #6b7585;
+            margin-bottom: 32px;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+        
+        .price-features li {
+            padding: 12px 0;
+            color: #6b7585;
+            font-size: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .price-features li::before {
+            content: '✓';
+            color: #22c55e;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .price-cta {
+            width: 100%;
+            background: #ff4500;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .price-cta:hover {
+            opacity: 0.9;
+        }
+        
+        .price-card:not(.featured) .price-cta {
+            background: transparent;
+            border: 2px solid #2a3140;
+            color: #e8eaf0;
+        }
+        
+        .price-card:not(.featured) .price-cta:hover {
+            border-color: #ff4500;
+            color: #ff4500;
+        }
+        
+        /* FAQ */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: #111318;
+            border: 1px solid #1f2530;
+            border-radius: 8px;
+            padding: 28px;
+            margin-bottom: 16px;
+        }
+        
+        .faq-q {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e8eaf0;
+            margin-bottom: 12px;
+        }
+        
+        .faq-a {
+            color: #6b7585;
+            line-height: 1.7;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, #ff4500 0%, #f97316 100%);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+        
+        .cta-section .btn-primary {
+            background: white;
+            color: #ff4500;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #111318;
+            border-top: 1px solid #1f2530;
+            padding: 40px 32px;
+            text-align: center;
+            color: #6b7585;
+            font-size: 14px;
+        }
+        
+        footer a {
+            color: #6b7585;
+            text-decoration: none;
+            margin: 0 16px;
+        }
+        
+        footer a:hover {
+            color: #ff4500;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .section-title { font-size: 32px; }
+            .pricing-grid, .features-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        🔥 Launch Special: First 10 reports at 50% off — $497 (reg. $997)
+    </div>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo">LeadFlow<span>AI</span></div>
+            <div class="nav-links">
+                <a href="index.html">Lead Monitoring</a>
+                <a href="intelligence.html">Intelligence Reports</a>
+                <a href="#pricing">Pricing</a>
+                <a href="mailto:mybangbot@gmail.com" class="nav-cta">Get Started</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🎯 STRATEGIC INTELLIGENCE</span>
+            <h1>Reddit Intelligence Reports<br><span>Beyond Surface-Level Analytics</span></h1>
+            <p class="hero-sub">
+                Full-spectrum competitive intelligence from Reddit threads: brand health monitoring, SERP vulnerabilities, competitor positioning, content gaps, keyword mining, and battle-tested ad copy — all in one comprehensive report.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#pricing" class="btn-primary">
+                    Get Your Report
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+                <a href="#sample" class="btn-secondary">View Sample Report</a>
+            </div>
+            
+            <div class="trust-bar">
+                <div class="trust-stat">
+                    <div class="stat">
+                        <div class="stat-value">11</div>
+                        <div class="stat-label">Intelligence Sections</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">1000+</div>
+                        <div class="stat-label">Threads Analyzed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">48hrs</div>
+                        <div class="stat-label">Delivery Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Reddit Intelligence</span>
+                <h2 class="section-title">The Last Unfiltered Focus Group</h2>
+                <p class="section-subtitle">
+                    Reddit is where your customers talk honestly about products, competitors, and purchase decisions — before SEO spam and AI content ruined the rest of the internet.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Brand Health Snapshot</h3>
+                    <p class="feature-desc">
+                        Real-time sentiment tracking across Reddit threads. See how you stack up against competitors, Net Recommender Scores, and "avoid list" frequency (how often you're explicitly excluded).
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">SERP Vulnerability Analysis</h3>
+                    <p class="feature-desc">
+                        Identify which Reddit threads rank on Google for your keywords — and whether they're hostile, neutral, or opportunities. ChatGPT and Perplexity cite Reddit. Are you in those citations?
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Purchase Decision Mining</h3>
+                    <p class="feature-desc">
+                        Map the elimination funnel: which brands get cut first, what criteria matter most, and exact phrases prospects use when comparing products ("X vs Y", "best X for", "should I buy").
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Keyword & Language Extraction</h3>
+                    <p class="feature-desc">
+                        25-35 high-frequency keywords mined directly from Reddit discussions. This is how your audience actually talks — not how you think they talk. Perfect for SEO and ad copy.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Competitor Positioning Map</h3>
+                    <p class="feature-desc">
+                        Strengths and weaknesses of every major competitor as discussed in P0 purchase threads. Real customer opinions, not marketing fluff. Know where to attack and where to defend.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3 class="feature-title">Ad Copy Extraction</h3>
+                    <p class="feature-desc">
+                        6-8 Reddit-native ad angles extracted from real user discussions. Use these for landing pages, Google Ads, social campaigns. Speak their language, not corporate marketing speak.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sample" style="background: #111318;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Full Report Structure</span>
+                <h2 class="section-title">11 Intelligence Sections</h2>
+                <p class="section-subtitle">
+                    Every report follows the same comprehensive framework. Niche-specific data, competitor analysis, and actionable insights.
+                </p>
+            </div>
+            
+            <div class="sample-preview">
+                <div class="sample-header">
+                    <div class="sample-title">Sample Report: Standing Desk Brand</div>
+                    <div class="sample-badge">1,247 threads analyzed</div>
+                </div>
+                <div class="sample-sections">
+                    <div class="sample-section">
+                        <div class="section-num">00 · EXECUTIVE SUMMARY</div>
+                        <div class="section-name">Strategic Overview</div>
+                        <div class="section-detail">Key findings, biggest threat, biggest opportunity, recommended action</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">01 · BRAND HEALTH</div>
+                        <div class="section-name">Sentiment Tracking</div>
+                        <div class="section-detail">You vs. 5 competitors: mentions, Net Rec Score, avoid frequency</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">02 · SUBREDDIT MAP</div>
+                        <div class="section-name">Purchase Intent Layers</div>
+                        <div class="section-detail">7-10 qualified subreddits ranked by purchase intent (High/Med/Low)</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">03 · THREAD TAXONOMY</div>
+                        <div class="section-name">Conversation Classification</div>
+                        <div class="section-detail">P0-P3 thread types with signal phrases and volume</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">04 · ELIMINATION FUNNEL</div>
+                        <div class="section-name">Decision Journey</div>
+                        <div class="section-detail">4-stage funnel: who gets cut, when, and why</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">05 · SERP VULNERABILITIES</div>
+                        <div class="section-name">Google Rankings</div>
+                        <div class="section-detail">Which Reddit threads rank for your keywords + sentiment</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">06 · COMPETITOR POSITIONING</div>
+                        <div class="section-name">Strengths & Weaknesses</div>
+                        <div class="section-detail">Real customer opinions on every major competitor</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">07 · KEYWORD MINING</div>
+                        <div class="section-name">Audience Language</div>
+                        <div class="section-detail">25-35 high-frequency phrases for SEO/PPC</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">08 · CONTENT GAPS</div>
+                        <div class="section-name">Unanswered Questions</div>
+                        <div class="section-detail">6-8 opportunities for blog posts, guides, FAQ pages</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">09 · AD COPY EXTRACTION</div>
+                        <div class="section-name">Native Messaging</div>
+                        <div class="section-detail">6-8 Reddit-to-ad translations ready to use</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">10 · ACTION PLAN</div>
+                        <div class="section-name">Prioritized Roadmap</div>
+                        <div class="section-detail">Immediate/Short/Medium/Ongoing actions with timelines</div>
+                    </div>
+                    <div class="sample-section">
+                        <div class="section-num">11 · INTELLIGENCE FLAGS</div>
+                        <div class="section-name">Critical Alerts</div>
+                        <div class="section-detail">Warnings, opportunities, and strategic notes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Simple Pricing</span>
+                <h2 class="section-title">Choose Your Intelligence Model</h2>
+                <p class="section-subtitle">
+                    One-time deep dives or ongoing monthly intelligence. Both include the full 11-section report.
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-name">One-Time Report</div>
+                    <div class="price-amount">$997</div>
+                    <div class="price-period">Pay once</div>
+                    <ul class="price-features">
+                        <li>Full 11-section intelligence report</li>
+                        <li>1,000+ threads analyzed</li>
+                        <li>Your niche + 5 competitors</li>
+                        <li>Delivered in 48 hours</li>
+                        <li>Exportable .txt format</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="mailto:mybangbot@gmail.com?subject=One-Time Intelligence Report&body=I want to order a one-time Reddit Intelligence Report.%0A%0ANiche/Brand:%0ACompetitors:%0ALocation (if applicable):" class="price-cta">Order Report</a>
+                </div>
+                
+                <div class="price-card featured">
+                    <div class="price-badge">🔥 MOST POPULAR</div>
+                    <div class="price-name">Monthly Intelligence</div>
+                    <div class="price-amount">$297</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>Monthly updated reports</li>
+                        <li>Track brand health over time</li>
+                        <li>SERP monitoring (monthly checks)</li>
+                        <li>New content opportunities each month</li>
+                        <li>Competitor movement tracking</li>
+                        <li>Priority support</li>
+                        <li>Slack alerts for major changes</li>
+                    </ul>
+                    <a href="mailto:mybangbot@gmail.com?subject=Monthly Intelligence Subscription&body=I want to subscribe to Monthly Reddit Intelligence Reports.%0A%0ANiche/Brand:%0ACompetitors:%0ALocation (if applicable):" class="price-cta">Start Monthly</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 48px; color: #6b7585;">
+                <p style="font-size: 14px; margin-bottom: 16px;">🎁 <strong style="color: #ff4500;">Launch Special:</strong> First 10 customers get 50% off first report ($497)</p>
+                <p style="font-size: 13px;">Custom enterprise packages available for agencies managing multiple brands.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section style="background: #111318;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q">How is this different from social listening tools?</div>
+                    <div class="faq-a">
+                        Most social listening tools just track mentions and sentiment. We analyze <strong>purchase decision threads</strong> — where people actively compare products and make buying decisions. We map elimination funnels, extract ad copy, identify SERP vulnerabilities, and provide a strategic action plan. Think competitive intelligence, not vanity metrics.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-q">What if my brand isn't mentioned on Reddit?</div>
+                    <div class="faq-a">
+                        Even better. The report will show you: (1) where your competitors ARE being discussed, (2) unanswered questions in your niche, (3) content gaps you can fill, and (4) exact language to use in ads and SEO. You'll know exactly where to insert yourself into the conversation.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-q">How fast will I get my report?</div>
+                    <div class="faq-a">
+                        One-time reports: <strong>48 hours</strong> from order confirmation. Monthly subscriptions: first report in 48 hours, then updated reports on the 1st of each month.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-q">Can I see a full sample report?</div>
+                    <div class="faq-a">
+                        Email mybangbot@gmail.com with your niche and we'll send a redacted sample report from a similar industry. (We anonymize client data, but you'll see the full structure and depth.)
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-q">Do you support local businesses?</div>
+                    <div class="faq-a">
+                        Yes. Specify your location during order (e.g., "Medical detox facility in Van Nuys, CA") and we'll analyze local subreddits, geo-specific threads, and location-based SERP vulnerabilities.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to See What Reddit Says About Your Market?</h2>
+            <p>Full intelligence report delivered in 48 hours. No contracts, no subscriptions required.</p>
+            <a href="mailto:mybangbot@gmail.com?subject=Intelligence Report Order&body=I want to order a Reddit Intelligence Report.%0A%0ANiche/Brand:%0ACompetitors:%0ALocation (if applicable):" class="btn-primary">
+                Order Your Report — $997
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 LeadFlow AI · Built by UpGo Web AI Agency</p>
+        <p>
+            <a href="index.html">Lead Monitoring</a> |
+            <a href="intelligence.html">Intelligence Reports</a> |
+            <a href="privacy.html">Privacy</a> |
+            <a href="terms.html">Terms</a>
+        </p>
+    </footer>
+</body>
+</html>
