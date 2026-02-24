@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Signup - LeadFlow AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .badge {
+            background: #10b981;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .plan-select {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .plan-option {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .plan-option:hover {
+            border-color: #667eea;
+            background: #f9fafb;
+        }
+        .plan-option input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .plan-name {
+            font-weight: 600;
+            color: #111827;
+            font-size: 1.1em;
+        }
+        .plan-price {
+            color: #667eea;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        .plan-features {
+            color: #6b7280;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .benefits {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 16px;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+        .benefits h3 {
+            color: #065f46;
+            margin-bottom: 10px;
+        }
+        .benefits ul {
+            list-style: none;
+            color: #047857;
+        }
+        .benefits li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge">🎉 BETA LAUNCH - 50% OFF LIFETIME</span>
+        <h1>Join LeadFlow AI Beta</h1>
+        <p class="subtitle">Get 20-100 qualified leads per week. Forever 50% off.</p>
+        
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div>
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Steve Martin">
+            </div>
+            
+            <div>
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com">
+            </div>
+            
+            <div>
+                <label for="company">Company / Agency Name</label>
+                <input type="text" id="company" name="company" placeholder="UpGo Web AI Agency">
+            </div>
+            
+            <div>
+                <label for="website">Website (optional)</label>
+                <input type="url" id="website" name="website" placeholder="https://yoursite.com">
+            </div>
+            
+            <div>
+                <label>Choose Your Plan *</label>
+                <div class="plan-select">
+                    <label class="plan-option">
+                        <input type="radio" name="plan" value="starter" required>
+                        <div>
+                            <div class="plan-name">Starter</div>
+                            <div class="plan-price">$149/mo <span style="text-decoration: line-through; color: #9ca3af;">$297</span></div>
+                            <div class="plan-features">20 leads/week • Reddit + 1 platform • Email digest</div>
+                        </div>
+                    </label>
+                    
+                    <label class="plan-option">
+                        <input type="radio" name="plan" value="growth">
+                        <div>
+                            <div class="plan-name">Growth 🔥 POPULAR</div>
+                            <div class="plan-price">$299/mo <span style="text-decoration: line-through; color: #9ca3af;">$597</span></div>
+                            <div class="plan-features">50 leads/week • Multi-platform • Real-time alerts • A/B/C scoring</div>
+                        </div>
+                    </label>
+                    
+                    <label class="plan-option">
+                        <input type="radio" name="plan" value="agency">
+                        <div>
+                            <div class="plan-name">Agency</div>
+                            <div class="plan-price">$499/mo <span style="text-decoration: line-through; color: #9ca3af;">$997</span></div>
+                            <div class="plan-features">100 leads/week • White-label • API access • Priority support</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            
+            <div>
+                <label for="industry">What industry are you targeting?</label>
+                <input type="text" name="industry" id="industry" placeholder="e.g., SaaS, ecommerce, real estate">
+            </div>
+            
+            <div>
+                <label for="message">Anything else we should know?</label>
+                <textarea name="message" id="message" rows="3" placeholder="Special requirements, questions, etc."></textarea>
+            </div>
+            
+            <button type="submit">Get Early Access →</button>
+        </form>
+        
+        <div class="benefits">
+            <h3>Beta Customer Benefits:</h3>
+            <ul>
+                <li>Lifetime 50% discount (locked in forever)</li>
+                <li>Priority support via Slack</li>
+                <li>Early access to new features</li>
+                <li>30-day money-back guarantee</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
