@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Test Customer",
+    "email": "banmart@gmail.com",
+    "plan": "growth",
+    "company": "",
+    "signed_up": "2026-02-24T09:35:41.418838",
+    "payment_sent": true,
+    "paid": false,
+    "activated": false
+  }
+]

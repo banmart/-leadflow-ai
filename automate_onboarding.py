@@ -43,7 +43,7 @@ def send_email(to_email, subject, html_body):
     """Send email via Gmail"""
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
-    sender_email = os.getenv('SENDER_EMAIL', 'banmart@gmail.com')
+    sender_email = os.getenv('SENDER_EMAIL', 'mybangbot@gmail.com')
     sender_password = os.getenv('SENDER_PASSWORD', '')
     
     if not sender_password:
@@ -56,7 +56,7 @@ def send_email(to_email, subject, html_body):
     msg['From'] = f"LeadFlow AI <{sender_email}>"
     msg['To'] = to_email
     
-    html_part = MIMEText(html_body, 'html')
+    html_part = MIMEText(html_body, 'html', 'utf-8')
     msg.attach(html_part)
     
     try:
